@@ -1,0 +1,56 @@
+contacts = {}
+
+while True:
+    print("\n===== CONTACT BOOK =====")
+    print("1. Add Contact")
+    print("2. View Contacts")
+    print("3. Search Contact")
+    print("4. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        name = input("Enter Name: ")
+        phone = input("Enter Phone Number: ")
+        contacts[name] = phone
+        print("Contact Added Successfully!")
+
+    elif choice == '2':
+        if contacts:
+            print("\nContacts List:")
+            for name, phone in contacts.items():
+                print(name, "-", phone)
+        else:
+            print("No contacts available.")
+
+    elif choice == '3':
+        search = input("Enter Name to Search: ")
+        if search in contacts:
+            print("Phone Number:", contacts[search])
+        else:
+            print("Contact not found.")
+
+    elif choice == '4':
+        print("Exiting Contact Book...")
+        break
+
+    else:
+        print("Invalid Choice")
+
+OUTPUT
+===== CONTACT BOOK =====
+1. Add Contact
+2. View Contacts
+3. Search Contact
+4. Exit
+
+Enter your choice: 1
+Enter Name: Geethanjali
+Enter Phone Number: 9876543210
+
+Contact Added Successfully!
+
+Enter your choice: 2
+
+Contacts List:
+Geethanjali - 9876543210
